@@ -12,5 +12,3 @@ def main():
     total = (carrot * carrot_amount) + (cabbage * cabbage_amount) + (tomato * tomato_amount)
     print(total)
 main()
-
-   

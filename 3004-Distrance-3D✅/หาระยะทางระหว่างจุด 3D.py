@@ -1,5 +1,6 @@
 """หาระยะทางระหว่างจุด 3D"""
 def main():
+    """distrance3d"""
     text_1 = input()
     text_1 = text_1.split(" ")
     x1 = int(text_1[0])
