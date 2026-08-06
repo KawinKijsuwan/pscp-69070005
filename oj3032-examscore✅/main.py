@@ -4,7 +4,7 @@ def main():
     rabbits = int(input())
     top_score = 0
     num_topscore = 0
-    for i in range(rabbits):
+    for _ in range(rabbits):
         score = int(input())
         if score > top_score:
             top_score = score
