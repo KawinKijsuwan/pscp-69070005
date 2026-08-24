@@ -1,6 +1,6 @@
 """saitama"""
 def main():
-    """saitama"""
+    """main"""
     pushup_target = int(input())
     situp_target = int(input())
     crunch_target = int(input())

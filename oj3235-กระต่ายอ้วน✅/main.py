@@ -17,3 +17,4 @@ for i in range(n):
 
 print(fat_rabbits)
 print(rabbits_names[max_index])
+print(fat_rabbits)
