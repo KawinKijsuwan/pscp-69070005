@@ -17,7 +17,7 @@ def main():
         score_password = 4
     elif total_score >= 500:
         score_password = 3
-    elif total_score < 500:
+    elif total_score >= 200:
         score_password = 2
     elif total_score < 200:
         score_password = 1
@@ -26,7 +26,7 @@ def main():
     elif score_password == 4 and bonus_score > 300:
         days_password = 88
 
-    print(total_score)
+    print(int(total_score))
     print(score_password)
     print(days_password)
 main()
