@@ -14,26 +14,26 @@
 
 หมายเลข/ชื่อโจทย์ OJ:
 
-```3025
-
+```text
+OJ3025 - Season
 ```
 
 OJ submission ID ถ้ามีการส่งแล้ว:
 
-```
-
+```text
+575273
 ```
 
 สถานะ OJ:
 
 ```text
-Pass / Not Pass / Not Submit
+Pass
 ```
 
 เวลาที่ใช้คิดและทำโจทย์ด้วยตนเอง:
 
 ```text
-
+30-60 minutes
 ```
 
 เลือกหนึ่งข้อ:
@@ -73,7 +73,18 @@ More than 4 weeks
 ถ้ายังไม่เข้าใจโจทย์ทั้งหมด ให้เขียนสิ่งที่เข้าใจในตอนนี้ ความเข้าใจอาจยังไม่ครบหรืออาจผิดได้ แต่ต้องพยายามอธิบายอย่างจริงใจ
 
 ```text
+โจทย์ให้เดือนและวัน แล้วให้บอกฤดูกาลของวันนั้น โดยฤดูกาลจะเปลี่ยนในวันที่ 21 ของเดือนมีนาคม มิถุนายน กันยายน และธันวาคม
 
+Input:
+บรรทัดแรกเป็นหมายเลขเดือน
+บรรทัดที่สองเป็นหมายเลขวัน
+
+Output:
+แสดงชื่อฤดูกาลเป็น winter, spring, summer หรือ fall
+
+Constraints:
+ก่อนวันที่ 21 ของเดือนที่เปลี่ยนฤดูกาล จะยังเป็นฤดูกาลเดิม
+ตั้งแต่วันที่ 21 เป็นต้นไป จะเป็นฤดูกาลใหม่
 ```
 
 ---
@@ -93,9 +104,11 @@ More than 4 weeks
 สามารถเขียนเป็น pseudocode, flowchart idea หรือขั้นตอนความคิดได้
 
 ```text
-Step 1:
-Step 2:
-Step 3:
+Step 1: รับค่าเดือนและวัน
+Step 2: ตรวจสอบว่าวันน้อยกว่า 21 หรือไม่
+Step 3: ถ้าวันน้อยกว่า 21 ให้ตรวจสอบเดือนตามฤดูกาลเดิม
+Step 4: ถ้าวันตั้งแต่ 21 ขึ้นไป ให้ตรวจสอบว่าเป็นเดือนที่มีการเปลี่ยนฤดูกาลหรือไม่
+Step 5: แสดงชื่อฤดูกาลที่ตรงกับวันนั้น
 ```
 
 ---
@@ -115,6 +128,8 @@ Step 3:
 ห้ามคัดลอกคำอธิบายจากคนอื่น
 
 ```text
+วิธีสุดท้ายเหมือนกับแผนแรก โดยโปรแกรมแยกตรวจสอบวันที่เป็น 2 กรณี คือก่อนวันที่ 21 และตั้งแต่วันที่ 21 เป็นต้นไป ถ้าวันน้อยกว่า 21 โปรแกรมจะตรวจสอบเดือนจากชุดเดือนของแต่ละฤดูกาล แต่ถ้าวันตั้งแต่ 21 โปรแกรมจะตรวจสอบเดือนที่เปลี่ยนฤดูกาล เช่น เดือน 3 จะเป็น spring เดือน 6 จะเป็น summer เดือน 9 จะเป็น fall และเดือน 12 จะเป็น winter
+
 
 ```
 
@@ -135,31 +150,32 @@ Step 3:
 ทำไมเลือก case นี้:
 
 ```text
-
+เลือกทดสอบวันก่อนวันที่ 21 ของเดือนมีนาคม เพราะยังต้องเป็นฤดูหนาว
 ```
 
 Input:
 
 ```text
-
+3
+20
 ```
 
 Expected output:
 
 ```text
-
+winter
 ```
 
 Actual output:
 
 ```text
-
+winter
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
+Pass
 ```
 
 ### Test Case 2
@@ -167,31 +183,32 @@ Pass / Not Pass
 ทำไมเลือก case นี้:
 
 ```text
-
+เลือกทดสอบวันที่ 21 มีนาคม ซึ่งเป็นวันเริ่มต้นของฤดูใบไม้ผลิ
 ```
 
 Input:
 
 ```text
-
+3
+21
 ```
 
 Expected output:
 
 ```text
-
+spring
 ```
 
 Actual output:
 
 ```text
-
+spring
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
+Pass
 ```
 
 ### Test Case 3
@@ -199,31 +216,32 @@ Pass / Not Pass
 ทำไมเลือก case นี้:
 
 ```text
-
+เลือกทดสอบวันที่ 21 ธันวาคม ซึ่งเป็นวันเริ่มต้นของฤดูหนาว
 ```
 
 Input:
 
 ```text
-
+12
+21
 ```
 
 Expected output:
 
 ```text
-
+winter
 ```
 
 Actual output:
 
 ```text
-
+winter
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
+Pass
 ```
 
 ---
@@ -233,7 +251,7 @@ Pass / Not Pass
 ใช้ AI กับโจทย์นี้หรือไม่
 
 ```text
-Yes / No
+No
 ```
 
 ถ้าใช้ AI ต้องทำไฟล์นี้ด้วย:
@@ -251,7 +269,7 @@ ai_reflection.md
 ได้ถามเพื่อน TA ผู้สอน หรือบุคคลอื่นเพื่อขอความช่วยเหลือในโจทย์นี้หรือไม่
 
 ```text
-Yes / No
+No
 ```
 
 ถ้าใช่ ให้อธิบายสั้น ๆ ว่าได้รับความช่วยเหลือแบบใด
@@ -305,10 +323,10 @@ No
 
 | Statement | Yes/No |
 |---|---|
-| I wrote this submission in my own words. | |
-| I understand my final code. | |
-| I recorded the real OJ status. | |
-| I did not copy AI-generated text directly into this file. | |
-| I did not copy code from another person. | |
-| If I received human help, I disclosed it in this file. | |
-| I submitted the final code to the OJ by myself. | |
+| I wrote this submission in my own words. | Yes |
+| I understand my final code. | Yes |
+| I recorded the real OJ status. | Yes |
+| I did not copy AI-generated text directly into this file. | Yes |
+| I did not copy code from another person. | Yes |
+| If I received human help, I disclosed it in this file. | Yes |
+| I submitted the final code to the OJ by myself. | Yes |
