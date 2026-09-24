@@ -24,6 +24,7 @@ if is_palindrome:
         n2 = "2"
     else:
         n2 = "0"
+        
 else:
     if int(room[4]) and int(room[0]) // int(room[4]) > 5:
         n2 = "1"
