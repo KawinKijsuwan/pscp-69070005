@@ -19,4 +19,3 @@ elif 'b' in s_lower:
     print(s[:b_idx + 1] + 'U' * (len(s) - b_idx - 1))
 else:
     print(("BUU" * len(s))[:len(s)])
-    
