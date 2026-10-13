@@ -2,16 +2,16 @@
 user_input = input().upper()
 
 suit = {
-    "D" : "diamonds",
-    "H" : "hearts",
-    "S" : "spades",
-    "C" : "clubs"
+    "D" : "Diamonds",
+    "H" : "Hearts",
+    "S" : "Spades",
+    "C" : "Clubs"
 }
 face = {
-    "A" : "ace",
-    "J" : "jack",
-    "Q" : "queen",
-    "K" : "king"
+    "A" : "Ace",
+    "J" : "Jack",
+    "Q" : "Queen",
+    "K" : "King"
 }
 
 rank = user_input[:-1]
