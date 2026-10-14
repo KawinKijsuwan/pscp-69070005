@@ -1,29 +1,26 @@
-"""shorten"""
-nums = []
+"""Shorten"""
+numbers = []
+
 while True:
     x = int(input())
     if x == -1:
         break
-    nums.append(x)
+    numbers.append(x)
 
-parts = []
-start = nums[0]
-prev = nums[0]
+result = []
+i = 0
 
-for i in range(1, len(nums)):
-    if nums[i] == prev + 1:
-        prev = nums[i]
+while i < len(numbers):
+    start = i
+
+    while i + 1 < len(numbers) and numbers[i + 1] == numbers[i] + 1:
+        i += 1
+
+    if start == i:
+        result.append(str(numbers[start]))
     else:
-        if start == prev:
-            parts.append(str(start))
-        else:
-            parts.append(str(start) + "-" + str(prev))
-        start = nums[i]
-        prev = nums[i]
+        result.append(f"{numbers[start]}-{numbers[i]}")
 
-if start == prev:
-    parts.append(str(start))
-else:
-    parts.append(str(start) + "-" + str(prev))
+    i += 1
 
-print(", ".join(parts))
+print(", ".join(result))
