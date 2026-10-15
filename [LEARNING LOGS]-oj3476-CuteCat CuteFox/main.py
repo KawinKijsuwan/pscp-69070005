@@ -5,14 +5,10 @@ cats = {}
 foxes = {}
 
 for _ in range(n):
-    text = input()
+    data = input().split('"')
 
-    text = text.replace("{", "")
-    text = text.replace("}", "")
-    text = text.replace('"', "")
-    text = text.replace(" ", "")
-
-    name, code = text.split(":")
+    name = data[1]
+    code = data[3]
 
     if code[:3] == "Cat":
         cats[code] = name
@@ -28,8 +24,8 @@ if "Fox01" not in foxes:
 cat_list = list(cats.items())
 fox_list = list(foxes.items())
 
-cat_list.sort(key=lambda item: int(item[0][3:]))
-fox_list.sort(key=lambda item: int(item[0][3:]))
+cat_list.sort(key=lambda x: int(x[0][3:]))
+fox_list.sort(key=lambda x: int(x[0][3:]))
 
 print("Cat :", len(cats))
 print("Fox :", len(foxes))
