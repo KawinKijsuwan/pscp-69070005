@@ -7,7 +7,7 @@ visited = [False] * (n + 1)
 current = s
 count = 0
 
-while current != 0 and not visited[current]:
+while current and not visited[current]:
     visited[current] = True
     count += 1
     current = next_student[current]
