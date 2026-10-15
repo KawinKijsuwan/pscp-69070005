@@ -10,11 +10,11 @@ for _ in range(n):
     else:
         fire = fire + a[3]
     if a[1] >= a[4]:
-            water = water + a[1]
+        water = water + a[1]
     else:
         water = water + a[4]
     if a[2] >= a[5]:
-            earth = earth + a[2]
+        earth = earth + a[2]
     else:
         earth = earth + a[5]
 total = fire + water + earth
