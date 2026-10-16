@@ -1,37 +1,34 @@
-"""cutecat"""
-n = int(input())
+"""Cats and Foxes"""
+def main():
+    """main"""
+    n = int(input())
 
-cats = {}
-foxes = {}
+    pack = {}
+    for _ in range(n):
+        line = input().strip().strip("{}")
+        parts = line.split(":")
+        name = parts[0].strip().strip("\"'")
+        code = parts[1].strip().strip("\"'")
+        pack[name] = code
 
-for _ in range(n):
-    data = input().split('"')
+    if "Cat01" not in pack.values() and "Garfield" not in pack:
+        pack["Garfield"] = "Cat01"
+    if "Fox01" not in pack.values() and "Fubuki" not in pack:
+        pack["Fubuki"] = "Fox01"
 
-    name = data[1]
-    code = data[3]
+    cats = {}
+    foxes = {}
+    for name, code in pack.items():
+        if code.startswith("Cat"):
+            cats[int(code[3:])] = name
+        else:
+            foxes[int(code[3:])] = name
 
-    if code[:3] == "Cat":
-        cats[code] = name
-    else:
-        foxes[code] = name
+    print("Cat :", len(cats))
+    print("Fox :", len(foxes))
 
-if "Cat01" not in cats:
-    cats["Cat01"] = "Garfield"
-
-if "Fox01" not in foxes:
-    foxes["Fox01"] = "Fubuki"
-
-cat_list = list(cats.items())
-fox_list = list(foxes.items())
-
-cat_list.sort(key=lambda x: int(x[0][3:]))
-fox_list.sort(key=lambda x: int(x[0][3:]))
-
-print("Cat :", len(cats))
-print("Fox :", len(foxes))
-
-for code, name in cat_list:
-    print(name, ":", code)
-
-for code, name in fox_list:
-    print(name, ":", code)
+    for number in sorted(cats):
+        print(f"{cats[number]} : Cat{number:02d}")
+    for number in sorted(foxes):
+        print(f"{foxes[number]} : Fox{number:02d}")
+main()
