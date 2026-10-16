@@ -1,12 +1,8 @@
 """ไข้หวัดกระต่ายสายพันธุ์ใหม่"""
 rows, cols = map(int, input().split())
-
 rabbit_row, rabbit_col = map(int, input().split())
-
 n = int(input())
-
 risk = []
-
 for _ in range(rows):
     risk.append([0] * cols)
 
