@@ -1,49 +1,58 @@
-"""พูดจาภาษากระต่าย"""
-def main():
-    """main"""
-    word = input().strip().upper()
-    n = len(word)
+text = input().upper()
 
-    only_it = True
-    for ch in word:
-        if ch not in "IT":
-            only_it = False
+only_it = True
 
-    if only_it:
-        print("unknown", n)
-        return
+for ch in text:
+    if ch != "I" and ch != "T":
+        only_it = False
+        break
 
-    bad = -1
-    for i in range(n):
-        ch = word[i]
-        if ch == "A":
-            if i == 0 or word[i - 1] not in "RA":
-                bad = i
+if only_it:
+    print("unknown", len(text))
+
+else:
+    i = 0
+    max_a = 0
+
+    while i < len(text):
+        if text[i] == "R":
+            if i + 1 == len(text):
+                print("no", i)
                 break
-        elif ch == "R":
-            if i == n - 1 or word[i + 1] != "A":
-                bad = i
+
+            if text[i + 1] != "A":
+                print("no", i + 1)
                 break
-        elif ch == "B":
-            if i == n - 1 or word[i + 1] not in "IT":
-                bad = i
+            count_a = 0
+            i += 1
+
+            while i < len(text) and text[i] == "A":
+                count_a += 1
+                i += 1
+
+            if count_a > max_a:
+                max_a = count_a
+
+        elif text[i] == "B":
+            if i + 1 == len(text):
+                print("no", i)
                 break
-        elif ch not in "IT":
-            bad = i
+
+            if text[i + 1] != "I" and text[i + 1] != "T":
+                print("no", i + 1)
+                break
+
+            i += 1
+
+            while i < len(text) and (text[i] == "I" or text[i] == "T"):
+                i += 1
+
+        elif text[i] == "I" or text[i] == "T":
+            i += 1
+
+        else:
+            print("no", i)
             break
 
-    if bad != -1:
-        print("no", bad)
-        return
-
-    longest = 0
-    run = 0
-    for ch in word:
-        if ch == "A":
-            run += 1
-            if run > longest:
-                longest = run
-        else:
-            run = 0
-    print("yes", longest)
-main()
+    else:
+        print("yes", max_a)
