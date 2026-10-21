@@ -1,0 +1,3 @@
+"""SqFree"""
+n = int(input())
+
